@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #f5f5f5;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #thankyou {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <h2>Student Info Form</h2>
+    <input type="text" name="name" placeholder="Enter your name" required><br>
+    <input type="text" name="id" placeholder="Enter your ID" required><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="thankyou">✅ Thank you! Form submitted successfully.</div>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Stop actual form submission
+      document.getElementById("myForm").style.display = "none";
+      document.getElementById("thankyou").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
